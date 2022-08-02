@@ -9,12 +9,13 @@ export const FormPokemon = ({ searchPokemon }) => {
   const handelSearchPokemon = (e) => {
     const { name, value } = e.target;
     setSearch({ ...search, [name]: value });
-    searchPokemon(search.pokemon);
+    searchPokemon(search.pokemon.toLowerCase());
+    console.log(search.pokemon);
   };
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    searchPokemon(search.pokemon);
+    searchPokemon(search.pokemon.toLowerCase());
   };
   return (
     <form className={style.form} onSubmit={handelSubmit}>

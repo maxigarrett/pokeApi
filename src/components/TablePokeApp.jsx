@@ -36,7 +36,6 @@ export const TablePokeApp = () => {
     if (pokemon === "") {
       getPokemons(URL).then((data) => setPokemons(data.results));
     }
-
     const findPokemon = (poke) => poke.name.includes(pokemon);
     const newArrayPokemonFilter = pokemons.filter(findPokemon);
     setCurrentValue(0);
